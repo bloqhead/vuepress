@@ -1,0 +1,78 @@
+//
+// Styles
+//
+
+$contentClass: ".theme-default-content";
+
+$codeLang: (
+  js: "javascript",
+  ts: "typescript",
+  html: "html",
+  php: "php",
+  md: "markdown",
+  vue: "vue",
+  css: "css",
+  sass: "sass",
+  scss: "scss",
+  less: "less",
+  stylus: "stylus",
+  go: "go",
+  java: "java",
+  c: "c",
+  sh: "bash",
+  yaml: "yaml",
+  py: "python",
+  docker: "docker",
+  dockerfile: "dockerfile",
+  makefile: "makefile",
+  json: "json"
+)
+
+:root {
+  // misc, base
+  --text-color: #2c3e50;
+  --accent-color: #3eaf7c;
+  --border-color: #eaecef;
+
+  // code blocks
+  --code-bg-base-color: #282c34;
+  --code-padding: 0.25rem 0.5rem;
+  --code-margin: 0;
+  --code-font-size: 0.85em;
+  --code-border-radius: 3px;
+  --code-token-deleted-color: #ec5975;
+  --code-token-inserted-color: #3eaf7c;
+
+  // pre blocks
+  --pre-line-height: 1.4;
+  --pre-padding: 1.25rem 1.5rem;
+  --pre-margin: 0.85rem 0;
+  --pre-border-radius: 6px;
+  --pre-overflow: auto;
+  --pre-code-color: #fff;
+  --pre-code-padding: 0;
+  --pre-code-bg-color: transparent;
+  --pre-code-border-radius: 0;
+
+  // language code blocks
+  --lang-block-border-radius: 6px;
+  --lang-block-number-top-pos: 0.8em;
+  --lang-block-number-right-pos: 1em;
+  --lang-block-number-color: rgba(255, 255, 255, 0.4);
+  --lang-block-number-font-size: 0.75rem;
+  --lang-block-number-width: 3.5rem;
+  --lang-block-number-wrapper-color: rgba(255, 255, 255, 0.3);
+  --lang-block-number-padding: 1.25rem 0;
+  --lang-block-number-height: 1.4;
+  --lang-block-number-after-border-radius: 6px 0 0 6px;
+  --lang-block-number-after-border-right: 1px solid rgba(0, 0, 0, 66%);
+
+  --lang-highlight-lines-padding-top: 1.3rem;
+  --lang-highlight-lines-line-height: 1.4;
+  --lang-highlight-active-bg-base-color: #000;
+
+  --arrow-border-style: solid;
+  --arrow-border-color: #ccc;
+  --arrow-border-width-1: 4px;
+  --arrow-border-width-2: 6px;
+}

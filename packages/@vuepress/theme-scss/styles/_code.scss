@@ -1,0 +1,145 @@
+//
+// Code Blocks
+//
+
+#{$contentClass} {
+  code {
+    color: lightness(var(--text-color), 0.2);
+    padding: var(--code-padding);
+    margin: var(--code-margin);
+    font-size: var(--code-font-size);
+    background-color: lightness(var(--code-bg-base-color), 0.05);
+    border-radius: var(--code-border-radius);
+
+    .token.deleted {
+      color: var(--code-token-deleted-color);
+    }
+
+    .token.inserted {
+      color: var(--code-token-inserted-color);
+    }
+  }
+
+  pre,
+  pre[class*="language-"] {
+    line-height: var(--pre-line-height);
+    padding: var(--pre-padding);
+    margin: var(--pre-margin);
+    background-color: var(--code-bg-color);
+    border-radius: var(--pre-border-radius);
+    overflow: var(--pre-overflow);
+
+    code {
+      color: var(--pre-code-color);
+      padding: var(--pre-code-padding);
+      background-color: var(--pre-code-bg-color);
+      border-radius: var(--pre-code-border-radius);
+    }
+  }
+}
+
+div[class*="language-"] {
+  position: relative;
+  background-color: var(--code-bg-color);
+  border-radius: var(--lang-block-border-radius);
+
+  .highlight-lines {
+    user-select: none;
+    padding-top: var(--lang-highlight-lines-padding-top);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: var(--lang-highlight-lines-line-height);
+
+    .highlighted {
+      background-color: lightness(var(--lang-highlight-active-bg-base-color), 0.66);
+    }
+  }
+
+  pre,
+  pre[class*="language-"] {
+    background: transparent;
+    position: relative;
+    z-index: 1;
+  }
+
+  &:before {
+    position: absolute;
+    z-index: 3;
+    top: var(--lang-block-number-top-pos);
+    right: var(--lang-block-number-right-pos);
+    font-size: var(--lang-block-number-font-size);
+    color: var(--lang-block-number-color);
+  }
+
+  &:not(.line-numbers-mode) .line-numbers-wrapper {
+    display: none;
+  }
+
+  &.line-numbers-mode {
+    .highlight-lines .highlighted {
+      position: relative;
+
+      &:before {
+        content: " ";
+        position: absolute;
+        z-index: 3;
+        left: 0;
+        top: 0;
+        display: block;
+        width: var(--lang-block-number-width);
+        height: 100%;
+        background-color: ;
+      }
+    }
+
+    pre {
+      padding-left: calc(var(--lang-block-number-width) + 1rem);
+      vertical-align: middle;
+    }
+
+    .line-numbers-wrapper {
+      position: absolute;
+      top: 0;
+      width: var(--lang-block-number-width);
+      text-align: center;
+      color: var(--lang-block-number-wrapper-color);
+      padding: var(--lang-block-number-padding);
+      line-height: var(--lang-block-number-line-height);
+
+      br {
+        user-select: none;
+      }
+
+      .line-number {
+        position: relative;
+        z-index: 4;
+        user-select: none;
+        font-size: 0.85em;
+      }
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: var(--lang-block-number-width);
+      height: 100%;
+      border-radius: var(--lang-block-number-after-border-radius);
+      border-right: var(--lang-block-number-after-border-right);
+      background-color: var(--code-bg-color);
+    }
+  }
+}
+
+@each $lang, $label in $codeLang {
+  div[class~="language-#{$label}"]:before,
+  div[class~="language-#{$lang}"]:before {
+    content: "#{$lang}";
+  }
+}
+
+@import "~prismjs/themes/prism-tomorrow.css";

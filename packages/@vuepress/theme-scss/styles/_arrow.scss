@@ -1,0 +1,33 @@
+//
+// Arrow
+//
+
+.arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+
+  &.up {
+    border-left: var(--arrow-border-width-1) var(--arrow-border-style) var(--arrow-border-no-color);
+    border-right: var(--arrow-border-width-1) var(--arrow-border-style) var(--arrow-border-no-color);
+    border-bottom: var(--arrow-border-width-2) var(--arrow-border-style) var(--arrow-border-color);
+  }
+
+  &.down {
+    border-left: var(--arrow-border-width-1) var(--arrow-border-style) var(--arrow-border-no-color);
+    border-right: var(--arrow-border-width-1) var(--arrow-border-style) var(--arrow-border-no-color);
+    border-top: var(--arrow-border-width-2) var(--arrow-border-style) var(--arrow-border-color);
+  }
+
+  &.right {
+    border-top: var(--arrow-border-width-1) var(--arrow-border-style) var(--arrow-border-no-color);
+    border-bottom: var(--arrow-border-width-1) var(--arrow-border-style) var(--arrow-border-no-color);
+    border-left: var(--arrow-border-width-2) var(--arrow-border-style) var(--arrow-border-color);
+  }
+
+  &.left {
+    border-top: var(--arrow-border-width-1) var(--arrow-border-style) var(--arrow-border-no-color);
+    border-bottom: var(--arrow-border-width-1) var(--arrow-border-style) var(--arrow-border-no-color);
+    border-right: var(--arrow-border-width-2) var(--arrow-border-style) var(--arrow-border-color);
+  }
+}

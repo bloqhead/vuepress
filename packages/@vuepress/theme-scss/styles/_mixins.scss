@@ -1,0 +1,23 @@
+//
+// Mixins + Functions
+//
+
+// lightness
+@function lightness($color, $lightnessMultiplier) {
+  $color: str-replace($color, "var(");
+  $color: str-replace($color, ")");
+  $color-h: var(#{$color + "-h"});
+  $color-s: var(#{$color + "-s"});
+  $color-l: var(#{$color + "-l"});
+  @return hsl($color-h, $color-s, calc(#{$color-l} * #{$lightnessMultiplier}));
+}
+
+// saturation
+@function saturation($color, $saturationMultiplier) {
+  $color: str-replace($color, "var(");
+  $color: str-replace($color, ")");
+  $color-h: var(#{$color + "-h"});
+  $color-s: var(#{$color + "-s"});
+  $color-l: var(#{$color + "-l"});
+  @return hsl($color-h, calc(#{$color-s} * #{$saturationMultiplier}), $color-l);
+}
